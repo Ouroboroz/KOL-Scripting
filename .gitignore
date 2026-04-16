@@ -218,6 +218,10 @@ __marimo__/
 
 *.json
 
+# DuckDB
+.duckdb
+
+
 # Claude Code
 .claude
 CLAUDE.md
