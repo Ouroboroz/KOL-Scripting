@@ -221,6 +221,8 @@ __marimo__/
 # DuckDB
 *.duckdb
 
+# Pickle
+*.pkl
 
 # Claude Code
 .claude
