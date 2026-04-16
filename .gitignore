@@ -219,7 +219,7 @@ __marimo__/
 *.json
 
 # DuckDB
-.duckdb
+*.duckdb
 
 
 # Claude Code
