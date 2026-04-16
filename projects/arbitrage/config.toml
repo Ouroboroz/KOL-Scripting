@@ -1,0 +1,69 @@
+[crafting]
+meat_per_adventure = 3000   # Your estimated meat/adv value
+combine_cost       = 10     # Meat paste cost per step (ignored when plunger is active)
+free_cooks         = 0      # e.g. 5 if you have Ol' Reliable
+free_mixes         = 0      # e.g. 3 if you have cocktailcrafting
+free_smiths        = 0      # e.g. 5 if you have innabox
+free_stills        = 0      # Number of still uses today
+has_pliers         = false  # Required for JEWELRY crafting
+has_malus          = false  # Required for MALUS crafting
+# Moon sign unlocks perks automatically:
+#   mongoose / wallaby / vole    → free infinite COMBINE (plunger) + Degrassi Knoll shop
+#   platypus / opossum / marmot  → Little Canadia Jewelers NPC shop access
+#   wombat   / blender / packrat → TINKER crafting (supertinkering)
+moon_sign = "mongoose"
+# Character class determines guild shop access:
+#   seal clubber / turtle tamer    → Smacketeria (guildstore3)
+#   pastamancer  / sauceror        → Gouda's Grimoire and Grocery (guildstore2)
+#   disco bandit / accordion thief → Shadowy Store (guildstore1)
+# character_class = "sauceror"
+has_plunger        = true  # explicit override: free COMBINE regardless of sign
+has_supertinkering = false  # explicit override: TINKER available regardless of sign
+# Hippy Store war outcome: "none", "hippy", "fratboy", or "both"
+hippy_store        = "fratboy"
+# IotM-gated shops (set to true if you own the relevant item)
+has_chateau        = false  # Chateau Mantegna Gift Shop
+has_mayo_clinic    = false  # The Mayo Clinic
+has_clan_fireworks = false  # Clan Underground Fireworks Shop
+has_hack_market    = false  # Hack Market (yearly IotY)
+# Drip Institute (requires completing The Drip content)
+drip_done          = false
+ignored_methods    = [
+    # Permanently expired seasonal events
+    "CRIMBO06", "CRIMBO07", "CRIMBO12",
+    # Requires buying a separate unlock recipe (cost not modeled)
+    "GRIMACITE",
+    # Hidden recipes with no discoverable path
+    "NODISCOVERY",
+]
+
+# Items excluded from scan results entirely.
+# Format: item_id = "reason" — the reason documents WHY this item is skipped.
+# Use this for items where the cost model is wrong or incomplete (not just unprofitable).
+[crafting.ignored_items]
+# Depleted Grimacite items: upstream data (data.loathers.net) omits the GRIMACITE
+# method — they show only SMITH, making them appear craftable when they actually
+# require reading the secret plans first (one-time cost not modeled).
+2747 = "chunk of depleted Grimacite — raw material, not a craft target"
+3660 = "tiny plastic chunk of depleted Grimacite — collectible, not craftable"
+# Secret recipe scrolls — the scroll itself has an unmodeled purchase cost
+3535 = "plans for depleted Grimacite hammer — secret recipe scroll"
+3536 = "plans for depleted Grimacite gravy boat — secret recipe scroll"
+3537 = "plans for depleted Grimacite weightlifting belt — secret recipe scroll"
+3538 = "plans for depleted Grimacite grappling hook — secret recipe scroll"
+3539 = "plans for depleted Grimacite ninja mask — secret recipe scroll"
+3540 = "plans for depleted Grimacite shinguards — secret recipe scroll"
+3541 = "plans for depleted Grimacite astrolabe — secret recipe scroll"
+# Crafted items — upstream source missing GRIMACITE method
+3542 = "depleted Grimacite hammer — upstream source missing GRIMACITE method"
+3543 = "depleted Grimacite gravy boat — upstream source missing GRIMACITE method"
+3544 = "depleted Grimacite weightlifting belt — upstream source missing GRIMACITE method"
+3545 = "depleted Grimacite grappling hook — upstream source missing GRIMACITE method"
+3546 = "depleted Grimacite ninja mask — upstream source missing GRIMACITE method"
+3547 = "depleted Grimacite shinguards — upstream source missing GRIMACITE method"
+3548 = "depleted Grimacite astrolabe — upstream source missing GRIMACITE method"
+3644 = "depleted Grimacite kneecapping stick — upstream source missing GRIMACITE method"
+
+[cache]
+graph_ttl_hours  = 24
+prices_ttl_hours = 1

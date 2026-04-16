@@ -1,0 +1,25 @@
+[project]
+name = "kol-arbitrage"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+    "kol-data",
+    "streamlit>=1.35",
+    "plotly>=5.22",
+    "pandas>=2.0",
+    "tomli-w>=1.0",
+    "python-dotenv>=1.0",
+]
+
+[tool.uv.sources]
+kol-data = { workspace = true }
+
+[project.scripts]
+kol = "cli.kol:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["calculation", "cli", "pages"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
