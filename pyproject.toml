@@ -1,0 +1,7 @@
+[tool.uv.workspace]
+members = [
+    "common/kol_data",
+    "common/kol_session",
+    "common/kol_client",
+    "projects/arbitrage",
+]
