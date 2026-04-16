@@ -1,0 +1,19 @@
+[project]
+name = "kol-client"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+    "kol-session",
+    "lxml>=5.0",
+    "cssselect>=1.2",
+]
+
+[tool.uv.sources]
+kol-session = { workspace = true }
+
+[tool.hatch.build.targets.wheel]
+packages = ["kol_client"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
